@@ -12,7 +12,7 @@ WORKDIR net-speeder
 RUN sh build.sh
 
 RUN mv net_speeder /usr/local/bin/
-nohup net_speeder venet0 "ip" >/dev/null 2>&1 &
+RUN nohup net_speeder venet0 "ip" >/dev/null 2>&1 &
 
 
 
