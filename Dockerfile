@@ -13,7 +13,7 @@ RUN sh build.sh
 
 RUN mv net_speeder /usr/local/bin/
 RUN nohup net_speeder venet0 "ip" >/dev/null 2>&1 &
-
+RUN echo 'nohup net_speeder venet0 "ip" >/dev/null 2>&1 &' >> /etc/rc.local
 
 
 # Configure container to run as an executable
