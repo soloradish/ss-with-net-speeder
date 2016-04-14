@@ -12,6 +12,7 @@ WORKDIR net-speeder
 RUN sh build.sh
 
 RUN mv net_speeder /usr/local/bin/
+COPY entrypoint.sh /usr/local/bin/
 
 # Configure container to run as an executable
-ENTRYPOINT ["nohup /usr/local/bin/net_speeder venet0 'ip' >/dev/null 2>&1 && /usr/local/bin/ssserver"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
