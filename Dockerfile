@@ -13,6 +13,8 @@ RUN sh build.sh
 
 RUN mv net_speeder /usr/local/bin/
 COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/net_speeder
 
 # Configure container to run as an executable
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
